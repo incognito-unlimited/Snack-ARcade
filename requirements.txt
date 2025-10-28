@@ -1,3 +1,7 @@
 opencv-python
 mediapipe
 numpy
+pygame
+pyinstaller 
+pyinstaller-hooks-contrib 
+matplotlib

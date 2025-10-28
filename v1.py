@@ -5,6 +5,22 @@ import random
 import time
 import pygame  # Added for sound
 from PIL import Image, ImageFont, ImageDraw  # Added for custom fonts
+import sys
+import os
+
+# --- Helper Function for PyInstaller ---
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        # Not running in a bundle
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+# -------------------------------------
 
 # --- Configuration ---
 REQUESTED_CAM_WIDTH = 1280
@@ -56,20 +72,20 @@ MOUTH_AR_THRESHOLD = 0.30
 MOUTH_CATCH_RADIUS_FACTOR = 0.35
 
 # Asset Paths
-PACKET_IMAGE_PATH = 'assets/win.png'
-CHIP_IMAGE_PATH = 'assets/chip.png'
-ROCK_IMAGE_PATH = 'assets/rock.png'
-LIFE_IMAGE_PATH = 'assets/life.png'
-SLOWMO_IMAGE_PATH = 'assets/slowmo.png'
-GAME_FONT_PATH = 'assets/font/game_font.ttf'
+PACKET_IMAGE_PATH = resource_path('assets/win.png')
+CHIP_IMAGE_PATH = resource_path('assets/chip.png')
+ROCK_IMAGE_PATH = resource_path('assets/rock.png')
+LIFE_IMAGE_PATH = resource_path('assets/life.png')
+SLOWMO_IMAGE_PATH = resource_path('assets/slowmo.png')
+GAME_FONT_PATH = resource_path('assets/font/game_font.ttf')
 
 # Sound Paths
-CRUNCH_SOUND_PATH = 'assets/sounds/crunch.wav'
-ROCK_SOUND_PATH = 'assets/sounds/rock_hit.wav'
-POWERUP_SOUND_PATH = 'assets/sounds/powerup.wav'
-SLOWMO_SOUND_PATH = 'assets/sounds/slowmo.wav'
-WIN_SOUND_PATH = 'assets/sounds/win.wav'
-LOSE_SOUND_PATH = 'assets/sounds/lose.wav'
+CRUNCH_SOUND_PATH = resource_path('assets/sounds/crunch.wav')
+ROCK_SOUND_PATH = resource_path('assets/sounds/rock_hit.wav')
+POWERUP_SOUND_PATH = resource_path('assets/sounds/powerup.wav')
+SLOWMO_SOUND_PATH = resource_path('assets/sounds/slowmo.wav')
+WIN_SOUND_PATH = resource_path('assets/sounds/win.wav')
+LOSE_SOUND_PATH = resource_path('assets/sounds/lose.wav')
 
 # --- Global Asset Storage ---
 packet_original_for_popup = None
