@@ -438,7 +438,7 @@ def run_game():
     list_available_cameras()
     
     # --- SET YOUR CAMERA INDEX HERE ---
-    CAMERA_INDEX = 0 
+    CAMERA_INDEX = 0
     # ---------------------------------
     
     print(f"Attempting to open camera {CAMERA_INDEX} by default...")
