@@ -49,7 +49,7 @@ RESTART_QUIT_TEXT_COLOR = (230, 230, 230)
 HEART_SIZE = (35, 35)
 PLAYER_LIVES = 3
 POINTS_TO_WIN = 20
-REWARD_CODE = "LAYSFREE20"
+REWARD_CODE = "Lays Chips (x1)"
 FALLING_SPEED_MIN_INITIAL = 3
 FALLING_SPEED_MAX_INITIAL = 8
 OBJECT_SPAWN_RATE_INITIAL = 40
@@ -80,7 +80,7 @@ SLOWMO_IMAGE_PATH = resource_path('assets/slowmo.png')
 GAME_FONT_PATH = resource_path('assets/font/game_font.ttf')
 
 # Sound Paths
-CRUNCH_SOUND_PATH = resource_path('assets/sounds/crunch.wav')
+CRUNCH_SOUND_PATH = resource_path('assets/sounds/noice.wav')
 ROCK_SOUND_PATH = resource_path('assets/sounds/rock_hit.wav')
 POWERUP_SOUND_PATH = resource_path('assets/sounds/powerup.wav')
 SLOWMO_SOUND_PATH = resource_path('assets/sounds/slowmo.wav')
@@ -438,7 +438,7 @@ def run_game():
     list_available_cameras()
     
     # --- SET YOUR CAMERA INDEX HERE ---
-    CAMERA_INDEX = 0
+    CAMERA_INDEX = 3
     # ---------------------------------
     
     print(f"Attempting to open camera {CAMERA_INDEX} by default...")
@@ -861,8 +861,8 @@ def run_game():
                         reward_y = pack_y + 80
                     
                     # Reward text (Split into two lines)
-                    code_prompt_txt_1 = "Use this code to"
-                    code_prompt_txt_2 = "redeem your prize:"
+                    code_prompt_txt_1 = "Congratulations,"
+                    code_prompt_txt_2 = "you have won:"
                     
                     code_prompt_1_w, code_prompt_1_h = get_pil_text_size(code_prompt_txt_1, ui_font_small)
                     code_prompt_1_x = current_popup_x + (current_popup_w - code_prompt_1_w) // 2
